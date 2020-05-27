@@ -3,9 +3,8 @@ import auth from '../middleware/auth'
 import passportFacebook from '../middleware/facebook'
 import passportGoogle from '../middleware/google'
 import User from '../models/User'
-import { check } from 'express-validator'
 
-const AuthController = require('../controllers/Authentication')
+import { AuthController } from '../controllers/Authentication'
 
 const router = express.Router()
 
@@ -21,12 +20,7 @@ router.get('/', auth, async (req, res) => {
   }
 })
 
-router.post('/',
-  [
-    check('email', 'Please include a valid email').isEmail(),
-    check('password', 'Password is required').exists(),
-  ],
-  async (req, res) => {
+router.post('/', async (req, res) => {
     await AuthController.login(req, res)
   }
 )

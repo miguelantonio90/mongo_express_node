@@ -1,0 +1,28 @@
+###
+### Create new User
+POST http://localhost:9000/api/users
+Content-Type: application/json
+
+{
+  "name": "Miguel",
+  "email": "miguel@gmail.cu",
+  "password": "12qwaszx"
+}
+
+### Login user
+POST http://localhost:9000/api/auth
+Content-Type: application/json
+
+{
+  "email": "miguel@gmail.cu",
+  "password": "12qwaszx"
+}
+> {% client.global.set("auth_token", response.body.token); %}
+
+###
+
+### Authenticated
+GET http://localhost:9000/api/auth
+x-auth-token: {{auth_token}}
+
+###

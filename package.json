@@ -21,6 +21,7 @@
     "express": "^4.16.3",
     "express-validator": "^6.4.1",
     "find-or-create": "^2.0.0",
+    "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.3.0",
     "moment": "^2.26.0",
     "mongoose": "^5.3.1",

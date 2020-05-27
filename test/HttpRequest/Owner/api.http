@@ -1,0 +1,38 @@
+### Fetch All Owner
+GET http://localhost:9000/api/owners
+Accept: application/json
+x-auth-token: {{auth_token}}
+
+> {% client.global.set("uid", response.body[0]._id); %}
+
+### Fetch One Owner
+GET http://localhost:9000/api/owners/{{uid}}
+Accept: application/json
+x-auth-token: {{auth_token}}
+
+### Create new Owner
+POST http://localhost:9000/api/owners
+Content-Type: application/json
+x-auth-token: {{auth_token}}
+
+{
+  "name": "Owner 1",
+  "lastName": "Last Owner"
+}
+
+### Update Owner
+PUT http://localhost:9000/api/owners/{{uid}}
+Content-Type: application/json
+x-auth-token: {{auth_token}}
+
+{
+  "name": "Owner UP",
+  "lastName": "Last Owner UP"
+}
+
+### Delete Owner
+DELETE http://localhost:9000/api/owners/{{uid}}
+Accept: application/json
+x-auth-token: {{auth_token}}
+
+###

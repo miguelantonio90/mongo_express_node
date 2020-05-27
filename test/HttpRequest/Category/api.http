@@ -1,0 +1,36 @@
+### Fetch All Category
+GET http://localhost:9000/api/category
+Accept: application/json
+x-auth-token: {{auth_token}}
+
+> {% client.global.set("uid", response.body[0]._id); %}
+
+### Fetch One Project
+GET http://localhost:9000/api/category/{{uid}}
+Accept: application/json
+x-auth-token: {{auth_token}}
+
+### Create new Project
+POST http://localhost:9000/api/category
+Content-Type: application/json
+x-auth-token: {{auth_token}}
+
+{
+  "name": "Category 1 "
+}
+
+### Update Project
+PUT http://localhost:9000/api/category/{{uid}}
+Content-Type: application/json
+x-auth-token: {{auth_token}}
+
+{
+  "name": "Category Test UP"
+}
+
+### Delete Project
+DELETE http://localhost:9000/api/category/{{uid}}
+Accept: application/json
+x-auth-token: {{auth_token}}
+
+###

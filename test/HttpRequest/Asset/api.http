@@ -1,0 +1,40 @@
+### Fetch All Asset
+GET http://localhost:9000/api/asset
+Accept: application/json
+x-auth-token: {{auth_token}}
+
+> {% client.global.set("uid", response.body[0]._id); %}
+
+### Fetch One Asset
+GET http://localhost:9000/api/asset/{{uid}}
+Accept: application/json
+x-auth-token: {{auth_token}}
+
+### Create new Asset
+POST http://localhost:9000/api/asset
+Content-Type: application/json
+x-auth-token: {{auth_token}}
+
+{
+  "price": 1.70,
+  "epcId": "epcId",
+  "lastReading": "26-05-2020",
+  "status": "miss"
+}
+
+### Update Asset
+PUT http://localhost:9000/api/asset/{{uid}}
+Content-Type: application/json
+x-auth-token: {{auth_token}}
+
+{
+  "name": "Asset UP",
+  "lastName": "Last Asset UP"
+}
+
+### Delete Asset
+DELETE http://localhost:9000/api/asset/{{uid}}
+Accept: application/json
+x-auth-token: {{auth_token}}
+
+###

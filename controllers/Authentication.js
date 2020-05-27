@@ -8,7 +8,10 @@ let login = async (req, res) => {
   if (!errors.isEmpty()) {
     return res.status(400).send({ errors: errors.array() })
   }
+
   let { email, password } = req.body
+
+  console.log(email)
 
   try {
     let [user] = await Promise.all([User.findOne({ email })])
